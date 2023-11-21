@@ -24,14 +24,13 @@ public class InputAndFinally{
         int n = sc.nextInt();
 
 // Now come to the finally keyword:
-
-        try{
-
+// Another usecase of try block is that [THE OBJECT CREATED IN SIDE THE PRAMETER BRACKET OF THE TRY BLOCK IS AUTO CLOSED]
+        try(BufferedReader buf = new BufferedReader(new InputStreamReader(System.in))){  // <----
+           System.out.println("Enter the name of the user:");
+           String new_name = buf.readLine();
+           System.out.println(new_name);
         }
-        finally{
-            
-        }
-
+        
         //or 
 
         try{
@@ -42,7 +41,7 @@ public class InputAndFinally{
         }
         finally{
             // executes every time , when an error occurs or not.
-            //  Unsually utilised as a closing block.
+            //  Unsually utilised as a closing resource block.
             bf.close(); // [eg: to close the bufferreader this is a good practice.]
         }
 
